@@ -1,0 +1,20 @@
+.container {
+  width: 100%;
+  display: flex;
+  .products-wrapper {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    .products {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      li {
+        min-width: 100%;
+        img {
+          width: 300px;
+        }
+      }
+    }
+  }
+}
