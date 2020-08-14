@@ -1,0 +1,54 @@
+.carousel {
+  position: relative;
+  margin: 0 auto;
+  width: 150rem;
+  background-color: $color-grey-dark-1;
+  height: 50rem; //test
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+  &__body {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    background-color: green;
+    height: 50rem;
+  }
+
+  &__product {
+    height: 20rem;
+    width: 10rem;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: orangered;
+  }
+
+  &__button {
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      border-radius: 10rem;
+      transition: all 0.2s;
+      position: relative;
+      font-size: 1.6rem;
+      position: absolute;
+      top: 50%;
+      background-color: $color-white;
+      color: $color-grey-dark-1;
+      // transform: translate(-50%, -50%);
+    }
+
+    &--left {
+      left: 0%;
+    }
+
+    &--right {
+      right: 0%;
+    }
+  }
+}
