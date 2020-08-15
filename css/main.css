@@ -24,7 +24,7 @@ body {
 }
 
 .heading-primary {
-  color: #fff;
+  color: #777;
   text-transform: uppercase;
 }
 
@@ -39,7 +39,7 @@ body {
   position: relative;
   margin: 0 auto;
   width: 150rem;
-  background-color: #777;
+  background-color: #fff;
   height: 50rem;
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -52,7 +52,7 @@ body {
   display: relative;
   left: 10rem;
   width: calc(150rem - 2 *10rem);
-  background-color: green;
+  background-color: #fff;
   height: 65%;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -62,7 +62,7 @@ body {
 }
 
 .carousel__bar--left {
-  background-color: blue;
+  background-color: #fff;
   width: 10rem;
   height: 100%;
   z-index: 10;
@@ -72,7 +72,7 @@ body {
 }
 
 .carousel__bar--right {
-  background-color: blue;
+  background-color: #fff;
   width: 10rem;
   height: 100%;
   z-index: 10;
@@ -83,7 +83,7 @@ body {
 
 .carousel__product {
   position: absolute;
-  background-color: orangered;
+  background-color: #fff;
   text-align: center;
   width: calc( calc(150rem - 2 *10rem) / 3);
   top: 0;
@@ -105,7 +105,7 @@ body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   position: absolute;
   top: 50%;
   z-index: 15;
