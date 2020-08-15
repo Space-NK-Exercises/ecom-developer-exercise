@@ -8,3 +8,13 @@ $color-grey-dark-3: #333;
 
 $color-white: #fff;
 $color-black: #000;
+
+//Carousel
+$carousel-width: 150rem;
+$carousel-height: 50rem;
+$carousel-bar-width: 10rem;
+$carousel-visible-products: 3;
+$carousel-body-width: calc(#{$carousel-width} - 2 *#{$carousel-bar-width});
+$carousel-product-width: calc(
+  #{$carousel-body-width} / #{$carousel-visible-products}
+);

@@ -16,6 +16,25 @@ body {
           box-sizing: border-box;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 700;
+  letter-spacing: 3.5rem;
+}
+
 .carousel {
   position: relative;
   margin: 0 auto;
@@ -25,23 +44,56 @@ body {
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
 }
 
 .carousel__body {
-  position: relative;
-  width: 80%;
-  margin: 0 auto;
+  position: absolute;
+  display: relative;
+  left: 10rem;
+  width: calc(150rem - 2 *10rem);
   background-color: green;
-  height: 50rem;
+  height: 65%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.carousel__bar--left {
+  background-color: blue;
+  width: 10rem;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel__bar--right {
+  background-color: blue;
+  width: 10rem;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .carousel__product {
-  height: 20rem;
-  width: 10rem;
   position: absolute;
-  top: 20px;
-  left: 20px;
   background-color: orangered;
+  text-align: center;
+  width: calc( calc(150rem - 2 *10rem) / 3);
+  top: 0;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.carousel__product img {
+  width: 60%;
+  margin-bottom: 2.5rem;
 }
 
 .carousel__button, .carousel__button:link, .carousel__button:visited {
@@ -56,8 +108,11 @@ body {
   font-size: 1.6rem;
   position: absolute;
   top: 50%;
+  z-index: 15;
   background-color: #fff;
   color: #777;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 .carousel__button--left {

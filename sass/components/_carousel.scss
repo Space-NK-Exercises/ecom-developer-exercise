@@ -1,27 +1,64 @@
 .carousel {
   position: relative;
   margin: 0 auto;
-  width: 150rem;
+  width: $carousel-width;
   background-color: $color-grey-dark-1;
-  height: 50rem; //test
+  height: $carousel-height;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  overflow: hidden;
 
   &__body {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
+    position: absolute;
+    display: relative;
+    left: $carousel-bar-width;
+    width: $carousel-body-width;
     background-color: green;
-    height: 50rem;
+    height: 65%;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 1s;
+
+    // @for $i from 1 through 5 {
+    //   div:nth-child(#{$i}) {
+    //     left: calc(#{$carousel-product-width} * (#{$i} - 1));
+    //   }
+    // }
+  }
+
+  &__bar {
+    &--left {
+      background-color: blue;
+      width: $carousel-bar-width;
+      height: 100%;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &--right {
+      background-color: blue;
+      width: $carousel-bar-width;
+      height: 100%;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__product {
-    height: 20rem;
-    width: 10rem;
     position: absolute;
-    top: 20px;
-    left: 20px;
     background-color: orangered;
+    text-align: center;
+    width: $carousel-product-width;
+    top: 0;
+    transition: all 1s;
+    img {
+      width: 60%;
+      margin-bottom: 2.5rem;
+    }
   }
 
   &__button {
@@ -38,9 +75,10 @@
       font-size: 1.6rem;
       position: absolute;
       top: 50%;
+      z-index: 15;
       background-color: $color-white;
       color: $color-grey-dark-1;
-      // transform: translate(-50%, -50%);
+      transform: translate(0, -50%);
     }
 
     &--left {
@@ -51,4 +89,9 @@
       right: 0%;
     }
   }
+
+  // &:hover &__body {
+  //   // transform: translate(-40%, -50%);
+  //   margin-left: calc(#{$carousel-product-width} * -1);
+  // }
 }
