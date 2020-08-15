@@ -18,12 +18,6 @@
     top: 50%;
     transform: translate(0, -50%);
     transition: all 1s;
-
-    // @for $i from 1 through 5 {
-    //   div:nth-child(#{$i}) {
-    //     left: calc(#{$carousel-product-width} * (#{$i} - 1));
-    //   }
-    // }
   }
 
   &__bar {
@@ -89,9 +83,4 @@
       right: 0%;
     }
   }
-
-  // &:hover &__body {
-  //   // transform: translate(-40%, -50%);
-  //   margin-left: calc(#{$carousel-product-width} * -1);
-  // }
 }
