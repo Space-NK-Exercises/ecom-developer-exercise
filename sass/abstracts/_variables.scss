@@ -10,14 +10,12 @@ $color-white: #fff;
 $color-black: #000;
 
 //Carousel
-$carousel-visible-products: 3;
+
 $carousel-height: 50rem;
 $carousel-bar-width: 10rem;
-// $carousel-width: 50rem;
-$carousel-width: calc(
-  (#{$carousel-visible-products} * 50rem) + 2 *#{$carousel-bar-width}
-);
+$carousel-width: 50vw;
+// $carousel-width: calc(
+//   (#{$carousel-visible-products} * 25%) + 2 *#{$carousel-bar-width}
+// );
+
 $carousel-body-width: calc(#{$carousel-width} - 2 *#{$carousel-bar-width});
-$carousel-product-width: calc(
-  #{$carousel-body-width} / #{$carousel-visible-products}
-);

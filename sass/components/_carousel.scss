@@ -45,14 +45,31 @@
   }
 
   &__product {
-    // left: 50%;
-    // transform: translateX(-50%);
     position: absolute;
     background-color: $color-white;
     text-align: center;
-    width: $carousel-product-width;
     top: 0;
     transition: all 1s;
+
+    &--5 {
+      width: calc(#{$carousel-body-width} / 5);
+    }
+
+    &--4 {
+      width: calc(#{$carousel-body-width} / 4);
+    }
+
+    &--3 {
+      width: calc(#{$carousel-body-width} / 3);
+    }
+
+    &--2 {
+      width: calc(#{$carousel-body-width} / 2);
+    }
+
+    &--1 {
+      width: calc(#{$carousel-body-width} / 1);
+    }
 
     img {
       width: 60%;
@@ -94,6 +111,12 @@
 
     &:hover {
       transform: translate(0, -45%) scale(1.2);
+    }
+
+    @include respond(tab-land) {
+    }
+
+    @include respond(tab-port) {
     }
   }
 }

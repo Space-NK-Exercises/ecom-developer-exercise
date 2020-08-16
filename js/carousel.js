@@ -5,20 +5,27 @@ class CustomCarousel {
   dataPath;
   recommendationsData;
   productsData;
+  resizeId;
 
-  constructor(carousel_id) {
+  constructor(carousel_id, visibleProducts) {
     this.currentIndex = 0;
     this.carousel_id = carousel_id;
-    this.visibleProducts = 3;
+    this.visibleProducts = visibleProducts;
     this.dataPath = '/data/recommendations.json';
     this.recommendationsData = []; // JSON data
     this.productsData = []; // Array of products as <div> tags
   }
 
   initializeCarousel = () => {
-    // this.adjustCarouselWidth();
-    this.assignEvents();
     this.getData();
+
+    // this.adjustCarouselWidth();
+  };
+
+  //Only fire event when resizing of window is complete
+  resizeEnd = () => {
+    clearTimeout(this.resizeId);
+    this.resizeId = setTimeout(this.readjustProductPosition, 500);
   };
 
   //Add Event Listeners
@@ -31,6 +38,7 @@ class CustomCarousel {
     );
     carousel_right_button.addEventListener('click', this.scrollRight);
     carousel_left_button.addEventListener('click', this.scrollLeft);
+    window.addEventListener('resize', this.resizeEnd);
   };
 
   generateProduct = (recommendation) => {
@@ -54,13 +62,25 @@ class CustomCarousel {
     return div;
   };
 
+  //Gives class name to the products based on the number of visible products setting
+  assignProductCount = () => {
+    const carousel_product_list = document.querySelectorAll(
+      `#${this.carousel_id} .carousel__body .carousel__product`
+    );
+    for (let i = 0; i < carousel_product_list.length; i++) {
+      carousel_product_list[i].classList.add(
+        `carousel__product--${this.visibleProducts}`
+      );
+    }
+  };
+
   //Append a single product to the carousel body
   appendProduct = (product) => {
-    const parent = document.querySelector(
+    const carousel__body = document.querySelector(
       `#${this.carousel_id} .carousel__body`
     );
     this.calculateProductPosition(product);
-    parent.appendChild(product);
+    carousel__body.appendChild(product);
   };
 
   //Append all products to the carousel body at once
@@ -92,16 +112,32 @@ class CustomCarousel {
     return carousel_product_width;
   };
 
-  //Readjust width of carousel body based on number of visible products
+  calculateCarouselWidth = () => {
+    const carousel_bar = document.querySelector(
+      `#${this.carousel_id} .carousel__bar--left`
+    );
+    const carousel_bar_width = carousel_bar.getBoundingClientRect().width;
+    const carousel_width = 2 * carousel_bar_width + 50 * this.visibleProducts;
+    return carousel_width;
+  };
+
+  readjustProductPosition = () => {
+    const carousel_product_list = document.querySelectorAll(
+      `#${this.carousel_id} .carousel__body .carousel__product`
+    );
+    const new_product_width = this.calculateProductWidth();
+    for (let i = 0; i < carousel_product_list.length; i++) {
+      const newMarginLeft =
+        new_product_width * i - this.currentIndex * new_product_width;
+
+      carousel_product_list[i].style = `margin-left: ${newMarginLeft}px`;
+    }
+  };
+
   adjustCarouselWidth = () => {
     const carousel = document.querySelector(`#${this.carousel_id}`);
-    const carousel_body = document.querySelector(
-      `#${this.carousel_id} .carousel__body`
-    );
-    const carousel_product_width =
-      carousel_body.getBoundingClientRect().width / this.visibleProducts;
-    console.log(carousel_product_width);
-    carousel.style = `width: ${carousel_product_width}rem`;
+    const carousel_width = this.calculateCarouselWidth();
+    carousel.style = `width: ${carousel_width}`;
   };
 
   //Get data, then append all products to carousel body
@@ -116,6 +152,8 @@ class CustomCarousel {
       })
       .then(() => {
         this.appendAllProducts(this.productsData);
+        this.assignProductCount();
+        this.assignEvents();
       });
   };
 
@@ -190,5 +228,5 @@ class CustomCarousel {
   };
 }
 
-let carousel = new CustomCarousel('carousel_instance');
+let carousel = new CustomCarousel('carousel_instance', 3);
 carousel.initializeCarousel();
