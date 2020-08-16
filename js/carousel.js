@@ -18,14 +18,12 @@ class CustomCarousel {
 
   initializeCarousel = () => {
     this.getData();
-
-    // this.adjustCarouselWidth();
   };
 
   //Only fire event when resizing of window is complete
   resizeEnd = () => {
     clearTimeout(this.resizeId);
-    this.resizeId = setTimeout(this.readjustProductPosition, 500);
+    this.resizeId = setTimeout(this.readjustProductPosition, 1000);
   };
 
   //Add Event Listeners
@@ -45,19 +43,29 @@ class CustomCarousel {
     const div = document.createElement('div');
     const product_image = document.createElement('img');
     const product_anchor = document.createElement('a');
-
-    const product_name = document.createElement('h3');
+    const product_name_top = document.createElement('h3');
+    const product_name_sub = document.createElement('h3');
     const product_price = document.createElement('h3');
+    const product_title_split = recommendation.productTitle.split('-');
+    const product_title_top = product_title_split[0];
+    let product_title_sub = product_title_split[1];
     div.classList.add('carousel__product');
     product_image.src = recommendation.imageSrc;
-    product_name.classList.add('heading-primary');
-    product_name.innerText = recommendation.productTitle;
+    product_name_top.classList.add('heading-primary');
+    product_name_top.innerText = product_title_top.toUpperCase();
+    product_name_sub.classList.add('heading-primary');
+    if (!product_title_sub) {
+      product_title_sub = '';
+    }
+    product_name_sub.innerText = product_title_sub;
     product_anchor.href = recommendation.productUrl;
     product_anchor.appendChild(product_image);
     product_price.innerText = recommendation.price;
     product_price.classList.add('heading-primary');
+    product_price.classList.add('heading-primary--sub');
     div.appendChild(product_anchor);
-    div.appendChild(product_name);
+    div.appendChild(product_name_top);
+    div.appendChild(product_name_sub);
     div.appendChild(product_price);
     return div;
   };
@@ -132,12 +140,6 @@ class CustomCarousel {
 
       carousel_product_list[i].style = `margin-left: ${newMarginLeft}px`;
     }
-  };
-
-  adjustCarouselWidth = () => {
-    const carousel = document.querySelector(`#${this.carousel_id}`);
-    const carousel_width = this.calculateCarouselWidth();
-    carousel.style = `width: ${carousel_width}`;
   };
 
   //Get data, then append all products to carousel body
@@ -228,5 +230,6 @@ class CustomCarousel {
   };
 }
 
+//(carousel_id, number of visible products (1-5))
 let carousel = new CustomCarousel('carousel_instance', 3);
 carousel.initializeCarousel();

@@ -13,9 +13,6 @@ $color-black: #000;
 
 $carousel-height: 50rem;
 $carousel-bar-width: 10rem;
-$carousel-width: 50vw;
-// $carousel-width: calc(
-//   (#{$carousel-visible-products} * 25%) + 2 *#{$carousel-bar-width}
-// );
+$carousel-width: 70vw;
 
 $carousel-body-width: calc(#{$carousel-width} - 2 *#{$carousel-bar-width});

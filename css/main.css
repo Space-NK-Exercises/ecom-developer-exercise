@@ -50,20 +50,17 @@ body {
 
 .heading-primary {
   color: #777;
-  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 700;
-  letter-spacing: 3.5rem;
+.heading-primary--sub {
+  font-weight: 900;
 }
 
 .carousel {
   position: relative;
   margin: 0 auto;
-  width: 50vw;
+  width: 70vw;
   background-color: #fff;
   height: 50rem;
   border-radius: 3px;
@@ -76,7 +73,7 @@ body {
   position: absolute;
   display: relative;
   left: 10rem;
-  width: calc(50vw - 2 *10rem);
+  width: calc(70vw - 2 *10rem);
   background-color: #fff;
   height: 65%;
   top: 50%;
@@ -112,29 +109,31 @@ body {
   position: absolute;
   background-color: #fff;
   text-align: center;
-  top: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) scale(1);
+          transform: translate(0, -50%) scale(1);
   -webkit-transition: all 1s;
   transition: all 1s;
 }
 
 .carousel__product--5 {
-  width: calc(calc(50vw - 2 *10rem) / 5);
+  width: calc(calc(70vw - 2 *10rem) / 5);
 }
 
 .carousel__product--4 {
-  width: calc(calc(50vw - 2 *10rem) / 4);
+  width: calc(calc(70vw - 2 *10rem) / 4);
 }
 
 .carousel__product--3 {
-  width: calc(calc(50vw - 2 *10rem) / 3);
+  width: calc(calc(70vw - 2 *10rem) / 3);
 }
 
 .carousel__product--2 {
-  width: calc(calc(50vw - 2 *10rem) / 2);
+  width: calc(calc(70vw - 2 *10rem) / 2);
 }
 
 .carousel__product--1 {
-  width: calc(calc(50vw - 2 *10rem) / 1);
+  width: calc(calc(70vw - 2 *10rem) / 1);
 }
 
 .carousel__product img {
@@ -144,8 +143,8 @@ body {
 }
 
 .carousel__product:hover {
-  -webkit-transform: translate(0, -5%) scale(1.2);
-          transform: translate(0, -5%) scale(1.2);
+  -webkit-transform: translate(0, -50%) scale(1.2);
+          transform: translate(0, -50%) scale(1.2);
 }
 
 .carousel__button, .carousel__button:link, .carousel__button:visited {
