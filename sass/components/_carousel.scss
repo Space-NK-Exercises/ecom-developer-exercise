@@ -29,6 +29,7 @@
       position: absolute;
       top: 0;
       left: 0;
+      cursor: pointer;
     }
 
     &--right {
@@ -39,19 +40,28 @@
       position: absolute;
       top: 0;
       right: 0;
+      cursor: pointer;
     }
   }
 
   &__product {
+    // left: 50%;
+    // transform: translateX(-50%);
     position: absolute;
     background-color: $color-white;
     text-align: center;
     width: $carousel-product-width;
     top: 0;
     transition: all 1s;
+
     img {
       width: 60%;
       margin-bottom: 2.5rem;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: translate(0, -5%) scale(1.2);
     }
   }
 
@@ -63,14 +73,13 @@
       text-decoration: none;
       padding: 1.5rem 4rem;
       display: inline-block;
-      border-radius: 10rem;
       transition: all 0.2s;
       position: relative;
       font-size: 2.5rem;
       position: absolute;
       top: 50%;
       z-index: 15;
-      background-color: $color-white;
+      background-color: transparent;
       color: $color-grey-dark-1;
       transform: translate(0, -50%);
     }
@@ -81,6 +90,10 @@
 
     &--right {
       right: 0%;
+    }
+
+    &:hover {
+      transform: translate(0, -45%) scale(1.2);
     }
   }
 }
