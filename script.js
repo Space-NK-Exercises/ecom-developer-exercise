@@ -1,5 +1,4 @@
-
-const wrapper = document.querySelector(".products")
+const wrapper = document.querySelector(".container")
 
 async function getData() {
   let response = await fetch("./data/recommendations.json")
@@ -8,42 +7,16 @@ async function getData() {
 }
 
 getData().then(data => {
-  data.productData.forEach(element => {
-    const productImg = document.createElement("img")
-    productImg.src = element.imageSrc
-
-    const productName = document.createElement("p")
-    productName.innerHTML = `${element.productTitle}`
-
-    const productPrice = document.createElement("p")
-    productPrice.innerHTML = `${element.price}`
-
-    const product = document.createElement("li")
-
-    product.appendChild(productImg)
-    product.appendChild(productName)
-    product.appendChild(productPrice)
-
-    wrapper.appendChild(product)
-  });
+  const elementsPerSlide = window.innerWidth <= 400 ? 1 : (window.innerWidth <= 667 ? 2 : 3)
+  carousel.init({data: data, target: wrapper, elementsPerSlide: elementsPerSlide,productURL: true, currency: "£"})  
 })
 
-let carouselPosition = 0
-
-function next(carousel) {
-  carousel.style.transform = `translateX(-${carouselPosition + 100}%)`
-  carouselPosition += 100
-}
-
-function prev(carousel) {
-  carousel.style.transform = `translateX(-${carouselPosition - 100}%)`
-  carouselPosition -= 100
-}
-
-document.querySelector(".next").addEventListener("click", () => {
-  next(wrapper)
+window.addEventListener("resize", () => {
+  if(window.innerWidth <= 400) {
+    carousel.setElementsPerSlide(1)
+  } else if(window.innerWidth <= 667) {
+    carousel.setElementsPerSlide(2)
+  } else carousel.setElementsPerSlide(3)
 })
 
-document.querySelector(".previous").addEventListener("click", () => {
-  prev(wrapper)
-})
+
