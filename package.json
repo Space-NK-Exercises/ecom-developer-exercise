@@ -5,10 +5,12 @@
   "main": "carousel.js",
   "dependencies": {},
   "devDependencies": {
-    "http-server": "^0.12.3"
+    "http-server": "^0.12.3",
+    "sass": "^1.26.10"
   },
   "scripts": {
-    "dev": "http-server"
+    "dev": "sass styles.scss styles.css && http-server",
+    "styles": "sass --watch styles.scss styles.css"
   },
   "repository": {
     "type": "git",

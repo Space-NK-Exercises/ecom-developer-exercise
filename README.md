@@ -21,7 +21,7 @@ Argument | Required | Type | Default
 ```currency``` | no | string | "$" 
 ```errorPhoto```| no | string | "./src/photo-error.png"
 
-You need to specify the required arguments in this ```init()``` function, the rest you only specify If you want different value than the default one. 
+You need to specify the required arguments when calling the class, the rest you only specify If you want them to have different value than the default one. 
 
 ### JSON file 
 
