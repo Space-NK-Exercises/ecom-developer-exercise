@@ -1,0 +1,59 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container .products-wrapper {
+  overflow: hidden;
+  width: 90%;
+  margin: auto;
+}
+.container .products-wrapper .products {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  transition: 0.5s ease;
+}
+.container .products-wrapper .products li {
+  transition: 0.5s ease;
+}
+.container .products-wrapper .products li img {
+  width: 100%;
+}
+.container .products-wrapper .products li:hover {
+  transform: scale(1.1);
+}
+.container .products-wrapper .products li .brand {
+  text-align: center;
+  padding: 0 4%;
+  margin-bottom: 2%;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+@media (min-width: 667px) {
+  .container .products-wrapper .products li .brand {
+    font-size: 20px;
+  }
+}
+.container .products-wrapper .products li .description, .container .products-wrapper .products li .price {
+  text-align: center;
+  padding: 0 4%;
+  margin-bottom: 2%;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 15px;
+  margin-top: 0;
+}
+@media (min-width: 667px) {
+  .container .products-wrapper .products li .description, .container .products-wrapper .products li .price {
+    font-size: 20px;
+  }
+}
+.container i {
+  cursor: pointer;
+}
+.container i:hover {
+  color: grey;
+}
+
+/*# sourceMappingURL=styles.css.map */

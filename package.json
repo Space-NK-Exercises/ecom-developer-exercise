@@ -1,0 +1,25 @@
+{
+  "name": "developer-exercise",
+  "version": "1.0.0",
+  "description": "This is a reusable library based on a class to create carousel with your products. You need to add \"carousel.js\" in a script tag to your html head tag and create JSON file with all the information needed.",
+  "main": "carousel.js",
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "sass": "^1.26.10"
+  },
+  "scripts": {
+    "dev": "sass styles.scss styles.css && http-server",
+    "styles": "sass --watch styles.scss styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agatap23/developer-exercise.git"
+  },
+  "author": "Agata Golan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Agatap23/developer-exercise/issues"
+  },
+  "homepage": "https://github.com/Agatap23/developer-exercise#readme"
+}

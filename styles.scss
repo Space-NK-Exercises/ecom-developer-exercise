@@ -1,0 +1,49 @@
+@mixin text {
+  text-align: center;
+  padding: 0 4%;
+  margin-bottom: 2%;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  @media (min-width: 667px) {
+    font-size: 20px;
+  }
+}
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .products-wrapper {
+    overflow: hidden;
+    width: 90%;
+    margin: auto;
+    .products {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      transition: 0.5s ease;
+      li {
+        transition: 0.5s ease;
+        img {
+          width: 100%;
+        }
+        &:hover {
+          transform: scale(1.1);
+        } 
+        .brand {
+          @include text;
+          text-transform: uppercase;
+        } 
+        .description, .price {
+          @include text;
+          margin-top: 0;
+        }    
+      }
+    }
+  }
+  i {
+    cursor: pointer;
+    &:hover {
+      color: grey;
+    }
+  }
+}
