@@ -1,24 +1,25 @@
 # Carousel framework for e-commerce products
 
-You can use this carousel for displaying your own list of products, together with description and prices. You need to add "carousel.js" in a script tag to your html head tag and create JSON file with all the information needed. 
+This is a reusable library based on a class to create carousel with your products. You need to add "carousel.js" in a script tag to your html head tag and create JSON file with all the information needed. 
 
 ### Creation and arguments
 
-To build the carousel you have to run this function: 
+To build the carousel you have to call the class ```Carousel``` with arguments like in an example below: 
 
 ```
-carousel.init(data: data, target: container)
+const carousel = new Carousel({data: data, target: myContainer})
 ```
-Where ```data``` should be your JSON, and ```target``` is the element in your DOM that you'd like to inject the carousel into. These are the required arguments for creating this carousel. Except for that you can decide whether you want to display navigation controls, choose the currency, how many elements per slide you wish to display, or if you'd like to attach the link to the product. You can find more details on it below: 
+Where ```data``` should be your JSON, and ```target``` is the element in your DOM that you'd like to inject the carousel into. These are the required arguments for creating this carousel. Except for that you can decide whether you want to display navigation controls, choose the currency and/or error picture, how many elements per slide you wish to display, or if you'd like to attach the link to the product. You can find more details on it below: 
 
 Argument | Required | Type | Default 
------- | ------ | ------ | ------ |
+------- | ------- | ------- | ------- |
 ```data``` | yes | JSON | no default 
 ```target``` | yes | DOM element | no default 
 ```showNavigation``` | no | boolean | true
 ```elementsPerSlide``` | no | number | 3
 ```productURL``` | no | boolean | false 
 ```currency``` | no | string | "$" 
+```errorPhoto```| no | string | "./src/photo-error.png"
 
 You need to specify the required arguments in this ```init()``` function, the rest you only specify If you want different value than the default one. 
 
@@ -47,10 +48,23 @@ You can dynamically adjust elements per slide in order to make the carousel resp
 carousel.setElementsPerSlide(2)
 ```
 
+### Error handling 
+
+If for some reason your image fails to load, the default error image will be displayed. However, If you would like to use your own error image, just add the source string to "errorPhoto" property as an argument: 
+
+```
+const carousel = new Carousel({data: data, target: myContainer, errorPhoto: "myErrorPhoto.png"})
+```
+
 ### Running the code
 
 You can run the carousel above to see the example of what it looks like. To do so you need to clone this repository and run: 
 
 ```
-npx http-server 
+npm install
+```
+And then:
+
+```
+npm run dev
 ```
