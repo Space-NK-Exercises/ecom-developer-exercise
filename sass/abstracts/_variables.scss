@@ -10,9 +10,6 @@ $color-white: #fff;
 $color-black: #000;
 
 //Carousel
-
-$carousel-height: 50rem;
 $carousel-bar-width: 10rem;
 $carousel-width: 70vw;
-
 $carousel-body-width: calc(#{$carousel-width} - 2 *#{$carousel-bar-width});

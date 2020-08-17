@@ -21,7 +21,7 @@ Breakpoint argument choices:
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 80%;
 }
 
 @media (max-width: 75em) {
@@ -39,6 +39,8 @@ html {
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  background: -webkit-gradient(linear, left top, right bottom, from(#f7f7f7), to(#eee));
+  background: linear-gradient(to right bottom, #f7f7f7, #eee);
 }
 
 body {
@@ -62,7 +64,7 @@ body {
   margin: 0 auto;
   width: 70vw;
   background-color: #fff;
-  height: 50rem;
+  height: 100%;
   border-radius: 3px;
   -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
           box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
@@ -180,7 +182,5 @@ body {
 
 .container {
   padding: 15rem 0;
-  background: -webkit-gradient(linear, left top, right bottom, from(#f7f7f7), to(#eee));
-  background: linear-gradient(to right bottom, #f7f7f7, #eee);
-  height: 100vh;
+  height: 80vh;
 }

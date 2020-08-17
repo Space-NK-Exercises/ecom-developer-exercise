@@ -7,7 +7,7 @@
 }
 
 html {
-  font-size: 62.5%; //1rem = 10px
+  font-size: 80%; //1rem = 10px
 
   @include respond(tab-land) {
     font-size: 56.25%; //1rem = 9px (9/16 = 56.25%)
@@ -20,4 +20,9 @@ html {
 
 body {
   box-sizing: border-box;
+  background: linear-gradient(
+    to right bottom,
+    $color-grey-light-1,
+    $color-grey-light-2
+  );
 }
