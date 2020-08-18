@@ -1,0 +1,123 @@
+.carousel {
+  position: relative;
+  margin: 0 auto;
+  width: $carousel-width;
+  background-color: $color-white;
+  height: 100%;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+  overflow: hidden;
+
+  &__body {
+    position: absolute;
+    display: relative;
+    left: $carousel-bar-width;
+    width: $carousel-body-width;
+    background-color: $color-white;
+    height: 65%;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 1s;
+  }
+
+  &__bar {
+    &--left {
+      background-color: $color-white;
+      width: $carousel-bar-width;
+      height: 100%;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: pointer;
+    }
+
+    &--right {
+      background-color: $color-white;
+      width: $carousel-bar-width;
+      height: 100%;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      right: 0;
+      cursor: pointer;
+    }
+  }
+
+  &__product {
+    position: absolute;
+    background-color: $color-white;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%) scale(1);
+    transition: all 1s;
+
+    &--5 {
+      width: calc(#{$carousel-body-width} / 5);
+    }
+
+    &--4 {
+      width: calc(#{$carousel-body-width} / 4);
+    }
+
+    &--3 {
+      width: calc(#{$carousel-body-width} / 3);
+    }
+
+    &--2 {
+      width: calc(#{$carousel-body-width} / 2);
+    }
+
+    &--1 {
+      width: calc(#{$carousel-body-width} / 1);
+    }
+
+    img {
+      width: 60%;
+      margin-bottom: 2.5rem;
+      cursor: pointer;
+    }
+
+    &:hover {
+      transform: translate(0, -50%) scale(1.2);
+    }
+  }
+
+  &__button {
+    &,
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.5rem 4rem;
+      display: inline-block;
+      transition: all 0.2s;
+      position: relative;
+      font-size: 2.5rem;
+      position: absolute;
+      top: 50%;
+      z-index: 15;
+      background-color: transparent;
+      color: $color-grey-dark-1;
+      transform: translate(0, -50%);
+    }
+
+    &--left {
+      left: 0%;
+    }
+
+    &--right {
+      right: 0%;
+    }
+
+    &:hover {
+      transform: translate(0, -45%) scale(1.2);
+    }
+
+    @include respond(tab-land) {
+    }
+
+    @include respond(tab-port) {
+    }
+  }
+}

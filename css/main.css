@@ -1,0 +1,186 @@
+/*
+0-600px: Phone
+600-900px: Tablet portrait
+900-1200px: Tablet landscape
+[1200-1800px]: Normal Styles
+1800+: Big desktop
+
+Breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  font-size: 80%;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: -webkit-gradient(linear, left top, right bottom, from(#f7f7f7), to(#eee));
+  background: linear-gradient(to right bottom, #f7f7f7, #eee);
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+}
+
+.heading-primary {
+  color: #777;
+  font-size: 1.3rem;
+}
+
+.heading-primary--sub {
+  font-weight: 900;
+}
+
+.carousel {
+  position: relative;
+  margin: 0 auto;
+  width: 70vw;
+  background-color: #fff;
+  height: 100%;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+          box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.carousel__body {
+  position: absolute;
+  display: relative;
+  left: 10rem;
+  width: calc(70vw - 2 *10rem);
+  background-color: #fff;
+  height: 65%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.carousel__bar--left {
+  background-color: #fff;
+  width: 10rem;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.carousel__bar--right {
+  background-color: #fff;
+  width: 10rem;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+.carousel__product {
+  position: absolute;
+  background-color: #fff;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) scale(1);
+          transform: translate(0, -50%) scale(1);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.carousel__product--5 {
+  width: calc(calc(70vw - 2 *10rem) / 5);
+}
+
+.carousel__product--4 {
+  width: calc(calc(70vw - 2 *10rem) / 4);
+}
+
+.carousel__product--3 {
+  width: calc(calc(70vw - 2 *10rem) / 3);
+}
+
+.carousel__product--2 {
+  width: calc(calc(70vw - 2 *10rem) / 2);
+}
+
+.carousel__product--1 {
+  width: calc(calc(70vw - 2 *10rem) / 1);
+}
+
+.carousel__product img {
+  width: 60%;
+  margin-bottom: 2.5rem;
+  cursor: pointer;
+}
+
+.carousel__product:hover {
+  -webkit-transform: translate(0, -50%) scale(1.2);
+          transform: translate(0, -50%) scale(1.2);
+}
+
+.carousel__button, .carousel__button:link, .carousel__button:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+  font-size: 2.5rem;
+  position: absolute;
+  top: 50%;
+  z-index: 15;
+  background-color: transparent;
+  color: #777;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.carousel__button--left {
+  left: 0%;
+}
+
+.carousel__button--right {
+  right: 0%;
+}
+
+.carousel__button:hover {
+  -webkit-transform: translate(0, -45%) scale(1.2);
+          transform: translate(0, -45%) scale(1.2);
+}
+
+.container {
+  padding: 15rem 0;
+  height: 80vh;
+}
