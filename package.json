@@ -1,0 +1,32 @@
+{
+  "name": "carousel-demo",
+  "version": "1.0.0",
+  "description": "This project demonstrates the capability of building a carousel using vanilla javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohammedjamboo-spacenk/developer-exercise.git"
+  },
+  "keywords": [
+    "carousel",
+    "javascript",
+    "scss"
+  ],
+  "author": "Mohammed Jamboo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohammedjamboo-spacenk/developer-exercise/issues"
+  },
+  "homepage": "https://github.com/mohammedjamboo-spacenk/developer-exercise#readme",
+  "devDependencies": {
+    "grunt": "^1.3.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-sass": "^2.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
+    "grunt-contrib-watch": "^1.1.0"
+  }
+}
