@@ -1,3 +1,5 @@
+var productsData =
+
 {
   "productData": [{
     "productUrl": "https://www.spacenk.com/uk/en_GB/skincare/cleansers/cleanser/soy-face-cleanser-MUK200025595.html",
@@ -101,7 +103,7 @@
     "price": "170.00"
   }, {
     "productUrl": "https://www.spacenk.com/uk/en_GB/fragrance/home-fragrance/candle/tubereuse-scented-candle-MUK101791315.html",
-    "imageSrc": "https://www.spacenk.com/dw/image/v2/ABCE_PRD/on/demandware.static/-/Sites-spacenkmastercatalog/default/dwa3c628f9/products/DIPTYQUE/UK101791315_DIPTYQUE",
+    "imageSrc": "https://www.spacenk.com/dw/image/v2/ABCE_PRD/on/demandware.static/-/Sites-spacenkmastercatalog/default/dwa3c628f9/products/DIPTYQUE/UK101791315_DIPTYQUE.jpg",
     "productTitle": "Diptyque - Tubereuse Scented Candle",
     "price": "47.00"
   }, {

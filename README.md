@@ -6,6 +6,22 @@ In this exercise we would like you to build a recommendations carousel component
 * Responsive
 * Clean, reusable code
 
-Please fork this repository and commit your changes for review.
+This carousel makes use of the flex css property to slide through the carousel items on the page. Use of package.json, Gruntfile and SASS is also demonstrated in the project. The smoothness is achieved using the css Transition property.
 
-Amend this Readme in your forked repo and use your commits to outline the component you have created and the decisions that you have made, including any information required for how to run your component. When complete please raise a Pull Request back into master branch for review.
+
+1. To make the carousel work, first run following command inside /repo/trunk directory path. This will install all the dependencies for the project.
+npm install
+2. Run below command to create main.js and main.css files
+grunt default
+3. Open index.html on your browser and the carousel should build through.
+
+
+
+
+### References
+
+https://www.npmjs.com/
+https://gruntjs.com/api/grunt.file
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
