@@ -43,21 +43,21 @@ h1 {
 }
 
 
-@media (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .carousel_container {
     left: -100%;
     transform: translateX(100%);
   }
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 480px) {
   .carousel_container {
     left: -50%;
     transform: translateX(50%);
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .carousel_container {
     left: -33.33333%;
     transform: translateX(33.33333%);
@@ -68,19 +68,19 @@ h1 {
   transform: translateX(-100%);
 }
 
-@media (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .carousel_container.is-prev {
     transform: translateX(-100%);
   }
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 480px) {
   .carousel_container.is-prev {
     transform: translateX(-50%);
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .carousel_container.is-prev {
     transform: translateX(-33.33333%);
   }
@@ -96,19 +96,19 @@ h1 {
   order: 2;
 }
 
-@media (min-width: 320px) {
+@media screen and (min-width: 320px) {
   .carousel_item {
     flex-basis: 100%;
   }
 }
 
-@media (min-width: 480px) {
+@media screen and (min-width: 480px) {
   .carousel_item {
     flex-basis: 50%;
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .carousel_item {
     flex-basis: 33.33333%;
   }

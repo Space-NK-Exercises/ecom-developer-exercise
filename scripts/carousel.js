@@ -1,8 +1,14 @@
 
-var carousel = document.querySelector('.carousel_container'); //
+var carousel = document.querySelector('.carousel_container'); 
 
-document.getElementsByClassName("btn_prev")[0].addEventListener("click", eventHandler);
-document.getElementsByClassName("btn_next")[0].addEventListener("click", eventHandler);
+var eventList = ["click", "touchmove"];
+for(event of eventList) {
+    document.getElementsByClassName("btn_prev")[0].addEventListener(event, eventHandler);
+    document.getElementsByClassName("btn_next")[0].addEventListener(event, eventHandler);
+}
+
+// document.getElementsByClassName("btn_prev")[0].addEventListener("click", eventHandler);
+// document.getElementsByClassName("btn_next")[0].addEventListener("click", eventHandler);
 
 // Custom event handler function
 function eventHandler(event) {
