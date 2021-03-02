@@ -1,0 +1,14 @@
+body {
+  background-color: lightgrey;
+}
+
+.carousel {
+  background-color: white;
+  width: 75%;
+  margin: 1em auto;
+}
+.carousel .carousel-item {
+  background-color: white;
+  width: 33.333%;
+  height: 100%;
+}
