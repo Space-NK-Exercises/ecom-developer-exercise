@@ -4,29 +4,26 @@ export class Card {
     this.productUrl = productUrl
     this.imageSrc = imageSrc
     this.productTitle = productTitle
-    this.price = price.toLocaleString("en-GB", {
+    this.price = new Intl.NumberFormat("en-GB", {
       style: "currency",
       currency: "GBP"
-    })
+    }).format(price)
   }
   render(target) {
     const markup = `
-      <div class='carousel__item carousel__item--mobile-in-1 carousel__item--tablet-in-2 carousel__item--desktop-in-3'>
-        <div class='demo-content'>
-          <a href="${this.productUrl}"
-             target="_blank"
-             data-position="${this.id}">
-            <img src="${this.imageSrc}"
-                alt="${this.productTitle}"/>
-            <div>
-              <h2>${this.productTitle}</h2>
-              <p>${this.price}</p>
-            </div>
-          </a>
+      <a class="carousel_item"
+         href="${this.productUrl}"
+         target="_blank"
+         data-position="${this.id}">
+        <img src="${this.imageSrc}"
+             alt="${this.productTitle}"
+             onerror="this.onerror=null;this.src='./img/logo.svg';"/>
+        <div>
+          <h2>${this.productTitle}</h2>
+          <p>${this.price}</p>
         </div>
-      </div>
+      </a>
     `
-    const track = target.querySelector(".carousel__track")
-    track.insertAdjacentHTML("afterbegin", markup)
+    target.insertAdjacentHTML("afterbegin", markup)
   }
 }
