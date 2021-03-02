@@ -33,4 +33,17 @@ carosels.forEach(carosel => {
           carosel.prepend(clone)
         })
     })
+    .then(() => {
+      const prev = document.createElement("div")
+      const prev_emoji = document.createTextNode("⬅️")
+      prev.appendChild(prev_emoji)
+      next.classList.add("prev")
+      carosel.appendChild(prev)
+
+      const next = document.createElement("div")
+      const next_emoji = document.createTextNode("➡️")
+      next.appendChild(next_emoji)
+      next.classList.add("next")
+      carosel.prepend(next)
+    })
 })
