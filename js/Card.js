@@ -1,5 +1,5 @@
 export class Card {
-  constructor(id, productUrl, imageSrc, productTitle, price) {
+  constructor(id, productUrl, imageSrc, productTitle, price, width) {
     this.id = id
     this.productUrl = productUrl
     this.imageSrc = imageSrc
@@ -8,13 +8,15 @@ export class Card {
       style: "currency",
       currency: "GBP"
     }).format(price)
+    this.width = width
   }
   render(target) {
     const markup = `
       <a class="carousel_item"
          href="${this.productUrl}"
          target="_blank"
-         data-position="${this.id}">
+         data-position="${this.id}"
+         style="width:${this.width}px; height: ${this.width}px;">
         <img src="${this.imageSrc}"
              alt="${this.productTitle}"
              onerror="this.onerror=null;this.src='./img/logo.svg';"/>
