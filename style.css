@@ -78,7 +78,7 @@ body {
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 760px) {
   .product,
   .product-container,
   .wrapper {
@@ -92,6 +92,25 @@ body {
   }
 
   .carousel-container {
-    width: auto;
+    width: 80%;
   }
 }
+
+/* Iphone 5 and moto mobiles*/
+@media only screen and (max-width: 370px) {
+  .slider-btn-hldr {
+    padding: 0;
+  }
+
+}
+
+/* Ipad and tablet version */
+
+@media only screen and (max-width: 800px) {
+  .slider-btn-hldr {
+    padding: 20px;
+  }
+
+}
+
+

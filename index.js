@@ -23,6 +23,8 @@ function detectMob() {
     /iPhone/i,
     /BlackBerry/i,
     /Windows Phone/i,
+    /IEMobile/i,
+    /Opera Mini/i,
   ];
 
   return toMatch.some((toMatchItem) => {
