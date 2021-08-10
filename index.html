@@ -7,11 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="carousel-container">
-        <div class="product-grid">
-
+    <div class="carousel-container">
+      <div>
+        <div class="slider-btn-hldr slider-btn-hldr-left">
+          <button id="left-btn" class="slider-btn" onclick="slideImages('left')">&#10094;</button>
         </div>
+        <div class="wrapper">
+          <div class="product-grid product-grid--max-3"></div>
+        </div>
+        <div class="slider-btn-hldr slider-btn-hldr-right">
+          <button id="right-btn" class="slider-btn" onclick="slideImages('right')">&#10095;</button>
+        </div>
+      </div>
     </div>
-    <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
