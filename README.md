@@ -1,11 +1,14 @@
-# Space NK Developer Exercise
+# E-commerce products
 
-In this exercise we would like you to build a recommendations carousel component purely in Vanilla JavaScript. The carousel should look similar to this [screenshot](recommendations-screenshot.png) using the recommendations [JSON](data/recommendations.json) provided. The carousel component you build should display the product title, image, brand name, price and should link to the website product detail page. Creativity is accepted but do not alter the JSON provided and please refrain from using any JavaScript libraries or frameworks.
+The Carousel component is to display cosmetics product with brand name and price details.
 
-### Requirements
-* Responsive
-* Clean, reusable code
+### Build and run
 
-Please fork this repository and commit your changes for review.
+post cloning the repo, launch the index.js file through node or Vscode "Live server" extension to run the application.
 
-Amend this Readme in your forked repo and use your commits to outline the component you have created and the decisions that you have made, including any information required for how to run your component. When complete please raise a Pull Request back into master branch for review.
+### Responsiveness
+Using javascript responsiveness on the application is achived. So Refresh the application while moving between devices.
+
+In Desktop and tablet view, carousel will have 3 items at a scroll and in Mobile view one item will be displayed.
+
+Responsiveness is tested in different devices(mobile and tablet).
