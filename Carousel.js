@@ -78,19 +78,22 @@ template.innerHTML = `
 
 const listenForClick = (element) => {
   const root = element.shadowRoot
-  const carousel = root.querySelector(".carousel") //carousel with all the css variables
+  const carousel = root.querySelector(".carousel") //carousel element with all the css variables
 
   root.addEventListener("click", (event) => {
     const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
+    const itemsCount = parseInt(element.getAttribute("items-count")) // the amount of items in the data array
+    const itemsPerRow = getComputedStyle(carousel).getPropertyValue("--items-per-row")
 
+    const isOverflowingToTheRight = currentIndex >= itemsCount - itemsPerRow
     //Previous button
     if (event.target.closest(".prev")) {
-      carousel.style.setProperty("--slide-index", currentIndex - 1)
+      currentIndex > 0 && carousel.style.setProperty("--slide-index", currentIndex - 1)
     }
 
     //Next button
     if (event.target.closest(".next")) {
-      carousel.style.setProperty("--slide-index", currentIndex + 1)
+      !isOverflowingToTheRight && carousel.style.setProperty("--slide-index", currentIndex + 1)
     }
   })
 }

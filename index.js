@@ -11,6 +11,7 @@ const fetchProducts = async () => {
 
 function createCarousel(products) {
   const carousel = new Carousel()
+  carousel.setAttribute('items-count', products.length)
   products.forEach((product) => {
     const productCard = new ProductCard()
     productCard.setAttribute("productUrl", product.productUrl)
