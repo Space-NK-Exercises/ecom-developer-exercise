@@ -1,4 +1,5 @@
 import ProductCard from "./ProductCard.js"
+import Carousel from "./Carousel.js"
 
 const fetchProducts = async () => {
   const dataJSON = await fetch("./data/recommendations.json")
@@ -9,8 +10,7 @@ const fetchProducts = async () => {
 }
 
 function createCarousel(products) {
-  const carousel = document.createElement("div") //TODO: create a carousel component
-  carousel.classList.add("carousel")
+  const carousel = new Carousel()
   products.forEach((product) => {
     const productCard = new ProductCard()
     productCard.setAttribute("productUrl", product.productUrl)
@@ -23,5 +23,6 @@ function createCarousel(products) {
   return carousel
 }
 
+customElements.define("custom-carousel", Carousel)
 customElements.define("product-card", ProductCard)
 window.addEventListener("load", fetchProducts)
