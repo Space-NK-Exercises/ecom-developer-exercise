@@ -12,7 +12,6 @@ template.innerHTML = `
     --items-per-row: 3;
     --items-gap: 5em;
     --slide-index: 0;
-
     padding: 1em 3.5em;
     overflow:hidden;
 
@@ -28,6 +27,8 @@ template.innerHTML = `
   display:flex;
   gap: var(--items-gap);
   width: 100%;
+  transform: translateX(calc( ((-100% - var(--items-gap)) / var(--items-per-row) * var(--slide-index))));
+  transition: transform 0.3s ease-in-out;
 }
 
  button {
@@ -77,13 +78,19 @@ template.innerHTML = `
 
 const listenForClick = (element) => {
   const root = element.shadowRoot
+  const carousel = root.querySelector(".carousel") //carousel with all the css variables
+
   root.addEventListener("click", (event) => {
+    const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
+
+    //Previous button
     if (event.target.closest(".prev")) {
-      console.log("clicked prev")
+      carousel.style.setProperty("--slide-index", currentIndex - 1)
     }
 
+    //Next button
     if (event.target.closest(".next")) {
-      console.log("clicked next")
+      carousel.style.setProperty("--slide-index", currentIndex + 1)
     }
   })
 }
