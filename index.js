@@ -22,6 +22,4 @@ function createCarousel(products) {
   return carousel
 }
 
-customElements.define("custom-carousel", Carousel)
-customElements.define("product-card", ProductCard)
 window.addEventListener("load", fetchProducts)

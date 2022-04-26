@@ -97,4 +97,6 @@ class Carousel extends HTMLElement {
   }
 }
 
+customElements.define("custom-carousel", Carousel)
+
 export default Carousel
