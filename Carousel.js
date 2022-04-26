@@ -8,7 +8,7 @@ template.innerHTML = `
   }
 
  .carousel {
-    --card-width: 20em;  
+    --card-width: 18em;  
     --items-per-row: 3;
     --items-gap: 5em;
     --slide-index: 0;
@@ -56,6 +56,32 @@ template.innerHTML = `
   .next {
     right:0;
   }
+
+  @media (max-width: 1250px) { 
+    .carousel {
+      --items-per-row: 3;
+      --card-width: 15em;
+    }
+  }
+
+  @media (max-width: 1000px) { 
+    .carousel {
+      --items-per-row: 2;
+      --card-width: 15em;
+    }
+  }
+
+  @media (max-width: 680px) { 
+    .carousel {
+      --items-per-row: 1;
+      --card-width: 20em;
+      padding: 1em;
+    }
+  }
+
+
+
+
 </style>
 <div class="carousel-wrapper">
     <button class="prev">
