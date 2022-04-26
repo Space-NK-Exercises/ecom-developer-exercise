@@ -17,7 +17,6 @@ function createCarousel(products) {
     productCard.setAttribute("imageSrc", product.imageSrc)
     productCard.setAttribute("productTitle", product.productTitle)
     productCard.setAttribute("price", product.price)
-    console.log(productCard)
     carousel.appendChild(productCard)
   })
   return carousel
