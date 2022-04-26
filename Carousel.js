@@ -83,9 +83,10 @@ const listenForClick = (element) => {
   root.addEventListener("click", (event) => {
     const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
     const itemsCount = parseInt(element.getAttribute("items-count")) // the amount of items in the data array
-    const itemsPerRow = getComputedStyle(carousel).getPropertyValue("--items-per-row")
+    const itemsPerRow = parseInt(getComputedStyle(carousel).getPropertyValue("--items-per-row"))
 
     const isOverflowingToTheRight = currentIndex >= itemsCount - itemsPerRow
+
     //Previous button
     if (event.target.closest(".prev")) {
       currentIndex > 0 && carousel.style.setProperty("--slide-index", currentIndex - 1)
