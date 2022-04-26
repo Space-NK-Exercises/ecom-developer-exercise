@@ -8,13 +8,26 @@ template.innerHTML = `
   }
 
  .carousel {
-     max-width: 1000px;
-     overflow:hidden;
+    --card-width: 20em;  
+    --items-per-row: 3;
+    --items-gap: 5em;
+    --slide-index: 0;
+
+    padding: 1em 3.5em;
+    overflow:hidden;
+
+
+    /* 
+    Calculates the the width of the container based on the
+    card width and the amount of items per row including the gap.
+    */
+    width: calc( var(--card-width) * var(--items-per-row) + var(--items-gap) * (var(--items-per-row) - 1) );
  }
 
  .carousel-cards {
   display:flex;
-
+  gap: var(--items-gap);
+  width: 100%;
 }
 
  button {
@@ -30,6 +43,7 @@ template.innerHTML = `
     border-radius: 5px;
     top:50%;
   }
+
   button:focus {
     outline: 2px solid gray;
   }
@@ -61,11 +75,25 @@ template.innerHTML = `
 </div> 
 `
 
+const listenForClick = (element) => {
+  const root = element.shadowRoot
+  root.addEventListener("click", (event) => {
+    if (event.target.closest(".prev")) {
+      console.log("clicked prev")
+    }
+
+    if (event.target.closest(".next")) {
+      console.log("clicked next")
+    }
+  })
+}
+
 class Carousel extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: "open" })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
+    listenForClick(this)
   }
 }
 

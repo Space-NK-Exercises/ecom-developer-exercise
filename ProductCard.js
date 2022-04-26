@@ -3,7 +3,7 @@ const template = document.createElement("template")
 template.innerHTML = `
 <style>
     .carousel-card {
-        width:18em;
+        width:var(--card-width);
         text-align: center;
         height:100%;
         position: relative;
