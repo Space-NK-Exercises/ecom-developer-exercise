@@ -3,7 +3,7 @@ const template = document.createElement("template")
 template.innerHTML = `
 <style>
     .carousel-card {
-        width:var(--card-width);
+        width: var(--card-width);
         text-align: center;
         height:100%;
         position: relative;
@@ -18,7 +18,8 @@ template.innerHTML = `
       }
 
     img {
-        width:100%;
+        width: calc(var(--card-width) / 1.5);
+        height: auto;
       }
 
     .carousel-card:hover {
