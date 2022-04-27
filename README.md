@@ -14,4 +14,4 @@ I've added a function that gets fired on window load which appends the carousel 
 window.addEventListener("load", onLoad)
 ```
 
-To run the app without cors issues you might need to use the LiveServer vscode extension and just open the [index.html](index.html) file.
+To run the app without cors issues you might need to use the LiveServer Vscode extension and just open the [index.html](index.html) file. Otherwise serve it with simple express/node/python server.
