@@ -9,6 +9,9 @@ h4 {
 .carousel {
 	width: 90%;
 	display: flex;
+	/* justify-content: center; */
+	/* align-items: center; */
+	margin: auto;
 	overflow: hidden;
 }
 
@@ -20,7 +23,7 @@ h4 {
 }
 
 .carousel-item-details {
-	margin: none;
+	margin: 5px;
 	padding: 20px 0px;
 }
 
@@ -30,4 +33,9 @@ h4 {
 
 .product-name {
 	text-transform: capitalize;
+}
+
+.carousel-btn {
+	background-color: transparent;
+	border-color: transparent;
 }
