@@ -102,36 +102,54 @@ template.innerHTML = `
 </div> 
 `
 
-const listenForClick = (element) => {
-  const root = element.shadowRoot
-  const carousel = root.querySelector(".carousel") //carousel element with all the css variables
-
-  root.addEventListener("click", (event) => {
-    const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
-    const itemsCount = parseInt(element.getAttribute("items-count")) // the amount of items in the data array
-    const itemsPerRow = parseInt(getComputedStyle(carousel).getPropertyValue("--items-per-row"))
-
-    const isOverflowingToTheRight = currentIndex >= itemsCount - itemsPerRow
-
-    //Previous button
-    if (event.target.closest(".prev")) {
-      currentIndex > 0 && carousel.style.setProperty("--slide-index", currentIndex - 1)
-    }
-
-    //Next button
-    if (event.target.closest(".next")) {
-      !isOverflowingToTheRight && carousel.style.setProperty("--slide-index", currentIndex + 1)
-    }
-  })
-}
-
 class Carousel extends HTMLElement {
   constructor() {
     super()
     this.attachShadow({ mode: "open" })
     this.shadowRoot.appendChild(template.content.cloneNode(true))
-    listenForClick(this)
   }
+
+  handleNextButton() {
+    const carousel = this.shadowRoot.querySelector(".carousel") //carousel element with all the css variables
+    const prevButton = this.shadowRoot.querySelector(".prev")
+    const nextButton = this.shadowRoot.querySelector(".next")
+
+    const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
+    const itemsCount = parseInt(this.getAttribute("items-count")) // the amount of items in the data array
+    const itemsPerRow = parseInt(getComputedStyle(carousel).getPropertyValue("--items-per-row"))
+    const isOverflowingToTheRight = currentIndex > itemsCount - itemsPerRow
+
+    if (!isOverflowingToTheRight) {
+      prevButton.removeAttribute("disabled")
+      currentIndex === itemsCount - itemsPerRow - 1 && nextButton.setAttribute("disabled", true)
+      carousel.style.setProperty("--slide-index", currentIndex + 1)
+    }
+  }
+
+  handlePrevButton() {
+    const carousel = this.shadowRoot.querySelector(".carousel") //carousel element with all the css variables
+    const nextButton = this.shadowRoot.querySelector(".next")
+    const prevButton = this.shadowRoot.querySelector(".prev")
+
+    const currentIndex = parseInt(getComputedStyle(carousel).getPropertyValue("--slide-index"))
+    const isOverflowingToTheLeft = currentIndex <= 0
+
+    if (!isOverflowingToTheLeft) {
+      currentIndex === 1 && prevButton.setAttribute("disabled", true)
+      nextButton.removeAttribute("disabled")
+      carousel.style.setProperty("--slide-index", currentIndex - 1)
+    }
+  }
+
+  connectedCallback() {
+    const prevButton = this.shadowRoot.querySelector(".prev")
+    const nextButton = this.shadowRoot.querySelector(".next")
+  
+    prevButton.setAttribute("disabled", true)
+    nextButton.addEventListener("click", this.handleNextButton.bind(this))
+    prevButton.addEventListener("click", this.handlePrevButton.bind(this))
+  }
+
 }
 
 customElements.define("custom-carousel", Carousel)
