@@ -1,11 +1,17 @@
 # Space NK Developer Exercise
 
-In this exercise we would like you to build a recommendations carousel component purely in Vanilla JavaScript. The carousel should look similar to this [screenshot](recommendations-screenshot.png) using the recommendations [JSON](data/recommendations.json) provided. The carousel component you build should display the product title, image, brand name, price and should link to the website product detail page. Creativity is accepted but do not alter the JSON provided and please refrain from using any JavaScript libraries or frameworks.
+[Carousel](Components/Carousel.js) - This component contains the controls of the slider. It has 2 buttons taking care of sliding the images left and right and it basically serves as a wrapper to the [ProductCard](components/ProductCard.js) component. The next and previous buttons control the ```--slider-index``` CSS variable which makes the carousel translate to the left or right with calculation based on the card width and the items gap.
 
-### Requirements
-* Responsive
-* Clean, reusable code
+I used media queries to make it responsive on smaller screens by changing the amount of items displayed and the card width & height based on screen size.
 
-Please fork this repository and commit your changes for review.
+In the [index.js](index.js) file I have created a function that accepts the products array.
+It creates a [ProductCard](components/ProductCard.js) component for each product, appends it to the carousel and returns the carousel.
 
-Amend this Readme in your forked repo and use your commits to outline the component you have created and the decisions that you have made, including any information required for how to run your component. When complete please raise a Pull Request back into master branch for review.
+
+I've added a function that gets fired on window load which appends the carousel to the body.
+
+```
+window.addEventListener("load", onLoad)
+```
+
+To run the app without cors issues you might need to use the LiveServer vscode extension and just open the [index.html](index.html) file.

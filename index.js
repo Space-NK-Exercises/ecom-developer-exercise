@@ -1,7 +1,7 @@
-import ProductCard from "./ProductCard.js"
-import Carousel from "./Carousel.js"
+import ProductCard from "./components/ProductCard.js"
+import Carousel from "./components/Carousel.js"
 
-const fetchProducts = async () => {
+const onLoad = async () => {
   const dataJSON = await fetch("./data/recommendations.json")
   const data = await dataJSON.json()
   const products = data.productData
@@ -11,7 +11,8 @@ const fetchProducts = async () => {
 
 function createCarousel(products) {
   const carousel = new Carousel()
-  carousel.setAttribute('items-count', products.length)
+  carousel.setAttribute("items-count", products.length)
+  
   products.forEach((product) => {
     const productCard = new ProductCard()
     productCard.setAttribute("productUrl", product.productUrl)
@@ -20,7 +21,8 @@ function createCarousel(products) {
     productCard.setAttribute("price", product.price)
     carousel.appendChild(productCard)
   })
+
   return carousel
 }
 
-window.addEventListener("load", fetchProducts)
+window.addEventListener("load", onLoad)
