@@ -1,3 +1,10 @@
-h1 {
-	color: red;
+.carousel {
+	width: 90%;
+	display: flex;
+}
+
+.carousel-item {
+	display: block;
+	width: 300px;
+	height: auto;
 }
