@@ -9,8 +9,6 @@ h4 {
 .carousel {
 	width: 90%;
 	display: flex;
-	/* justify-content: center; */
-	/* align-items: center; */
 	margin: auto;
 	overflow: hidden;
 }
@@ -36,6 +34,18 @@ h4 {
 }
 
 .carousel-btn {
+	display: flex;
+	height: 200px;
+	align-items: center;
 	background-color: transparent;
 	border-color: transparent;
+}
+
+.btn-previous {
+	position: absolute;
+	left: 0;
+}
+.btn-next {
+	position: absolute;
+	right: 0;
 }
