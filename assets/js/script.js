@@ -3,21 +3,19 @@ const nextBtn = document.querySelector('#next');
 const slider = document.getElementById('slider');
 
 // next/previous buttons
-let count = 1;
+let count = 0;
 
 const showPrevious = () => {
-	if (count > 1) {
+	if (count > 0) {
 		count -= 1;
-		slider.style.marginLeft = count * '-300' + 'px';
-		console.log(count);
+		slider.style.marginLeft = count * '-200' + 'px';
 	}
 };
 const showNext = async (event) => {
 	const { productData } = await fetchData();
 	if (count < productData.length - 1) {
 		count += 1;
-		slider.style.marginLeft = count * '-300' + 'px';
-		console.log(count);
+		slider.style.marginLeft = count * '-200' + 'px';
 	}
 };
 

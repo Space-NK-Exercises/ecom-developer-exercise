@@ -7,9 +7,9 @@ h4 {
 }
 
 .carousel {
-	width: 90%;
-	display: flex;
+	width: 100%;
 	margin: auto;
+	display: flex;
 	overflow: hidden;
 	position: relative;
 }
@@ -18,15 +18,18 @@ h4 {
 }
 
 .carousel-item {
-	display: block;
+	margin-right: 30px;
+	display: flex;
+	flex-direction: column;
 	height: auto;
-	min-width: 300px;
+	/* min-width: 300px; */
 	text-align: center;
 }
 
 .product-img {
 	width: 200px;
 	height: 200px;
+	margin: auto;
 }
 .carousel-item-details {
 	margin: 5px;
