@@ -30,8 +30,9 @@ const showNext = () => {
 const handleRelocate = (event) => {
 	console.log('relocate to product page');
 
-	const productClicked = event.currentTarget.getAttribute('data-index');
-	console.log(productClicked);
+	const productClicked = event.currentTarget;
+	const index = parseInt(productClicked.getAttribute('data-index'));
+	window.open(productData[index].productUrl);
 };
 
 const constructCarouselItem = (product, index) => {
