@@ -12,6 +12,9 @@ h4 {
 	margin: auto;
 	overflow: hidden;
 }
+.slider {
+	display: flex;
+}
 
 .carousel-item {
 	display: block;
@@ -40,7 +43,7 @@ h4 {
 .carousel-btn {
 	display: flex;
 	height: 200px;
-	align-items: center;
+	align-items: flex-end;
 	background-color: transparent;
 	border-color: transparent;
 	cursor: pointer;

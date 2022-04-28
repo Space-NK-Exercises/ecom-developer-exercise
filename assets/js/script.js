@@ -61,7 +61,8 @@ const renderCarouselItem = async () => {
 	const carouselItems = productData.map(constructCarouselItem);
 
 	const carousel = document.querySelector('#carousel');
-	carousel.append(...carouselItems);
+	const slider = document.querySelector('.slider');
+	slider.append(...carouselItems);
 };
 
 // onLoad function
