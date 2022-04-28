@@ -1,11 +1,14 @@
 # Space NK Developer Exercise
 
-In this exercise we would like you to build a recommendations carousel component purely in Vanilla JavaScript. The carousel should look similar to this [screenshot](recommendations-screenshot.png) using the recommendations [JSON](data/recommendations.json) provided. The carousel component you build should display the product title, image, brand name, price and should link to the website product detail page. Creativity is accepted but do not alter the JSON provided and please refrain from using any JavaScript libraries or frameworks.
+To run this app open up the `index.html` file
+right click and select `open in live server`. This should open the browser displaying the carousel.
 
-### Requirements
-* Responsive
-* Clean, reusable code
+I was mindful that this task was to be completed with plain `Javascript`. Which is why i have not used jQuery or any other frameworks that would have made the task much easier.
 
-Please fork this repository and commit your changes for review.
+You will notice although i have the media queries set up in CSS, i have not used them as i found it difficult to create a center focused carousel, that would be able to be achieved by margins and paddings alone. I therefore set out to try to use `window.innerWidth` to set the count to move the carousel forward and back using the screen width opposed to a singular product.
 
-Amend this Readme in your forked repo and use your commits to outline the component you have created and the decisions that you have made, including any information required for how to run your component. When complete please raise a Pull Request back into master branch for review.
+I found that leaving the application like this was the closest i would get to completing the task.
+
+I know that i could have achieved a neater finish using the grid system, but i could not think of a way to do this without a plugin.
+
+Thank you for your time!

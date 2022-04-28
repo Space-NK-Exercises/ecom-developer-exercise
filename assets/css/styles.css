@@ -1,0 +1,74 @@
+body {
+	font-family: 'Didact Gothic', sans-serif;
+}
+h3,
+h4 {
+	margin: 0;
+}
+
+.carousel {
+	width: 100%;
+	margin: auto;
+	display: flex;
+	overflow: hidden;
+	position: relative;
+}
+.slider {
+	display: flex;
+}
+
+.carousel-item {
+	margin-right: 30px;
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	/* min-width: 300px; */
+	text-align: center;
+}
+
+.product-img {
+	width: 200px;
+	height: 200px;
+	margin: auto;
+}
+.carousel-item-details {
+	margin: 5px;
+	padding: 20px 0px;
+}
+
+.brand-name {
+	text-transform: uppercase;
+}
+
+.product-name {
+	text-transform: capitalize;
+}
+
+.carousel-btn {
+	display: flex;
+	height: 200px;
+	align-items: flex-end;
+	background-color: transparent;
+	border-color: transparent;
+	cursor: pointer;
+}
+
+.btn-previous {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.btn-next {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 1024px) {
+}
