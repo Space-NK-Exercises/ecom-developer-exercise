@@ -39,6 +39,7 @@ h4 {
 	align-items: center;
 	background-color: transparent;
 	border-color: transparent;
+	cursor: pointer;
 }
 
 .btn-previous {
