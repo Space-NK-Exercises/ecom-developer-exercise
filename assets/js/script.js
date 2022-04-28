@@ -1,19 +1,31 @@
 const previousBtn = document.querySelector('#previous');
 const nextBtn = document.querySelector('#next');
+const slider = document.getElementById('slider');
+
+// next/previous buttons
+let count = 1;
+
+const showPrevious = () => {
+	if (count > 1) {
+		count -= 1;
+		slider.style.marginLeft = count * '-300' + 'px';
+		console.log(count);
+	}
+};
+const showNext = async (event) => {
+	const { productData } = await fetchData();
+	if (count < productData.length - 1) {
+		count += 1;
+		slider.style.marginLeft = count * '-300' + 'px';
+		console.log(count);
+	}
+};
 
 // get JSON data
 const fetchData = async () => {
 	const URL = new Request('../../assets/data/recommendations.json');
 	const response = await fetch(URL);
 	return response.json();
-};
-
-// next/previous buttons
-const showPrevious = () => {
-	console.log('previous');
-};
-const showNext = () => {
-	console.log('next');
 };
 
 // relocates to product selected
