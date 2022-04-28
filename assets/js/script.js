@@ -1,25 +1,14 @@
-const productData = [
-	{
-		productUrl:
-			'https://www.spacenk.com/uk/en_GB/skincare/cleansers/cleanser/soy-face-cleanser-MUK200025595.html',
-		imageSrc:
-			'https://www.spacenk.com/on/demandware.static/-/Sites-spacenkmastercatalog/default/dwc9059537/products/FRESH/UK200025595_FRESH.jpg',
-		productTitle: 'Fresh - Soy Face Cleanser',
-		price: '30.00',
-	},
-	{
-		productUrl:
-			'https://www.spacenk.com/uk/en_GB/skincare/cleansers/cleanser/cleanser-MUK154050009.html',
-		imageSrc:
-			'https://www.spacenk.com/on/demandware.static/-/Sites-spacenkmastercatalog/default/dw4fed2dd5/products/EVE_LOM/UK154050009_EVE_LOM.jpg',
-		productTitle: 'Eve Lom - Cleanser',
-		price: '85.00',
-	},
-];
-
 const previousBtn = document.querySelector('#previous');
 const nextBtn = document.querySelector('#next');
 
+// get JSON data
+const fetchData = async () => {
+	const URL = new Request('../../assets/data/recommendations.json');
+	const response = await fetch(URL);
+	return response.json();
+};
+
+// next/previous buttons
 const showPrevious = () => {
 	console.log('previous');
 };
@@ -27,26 +16,25 @@ const showNext = () => {
 	console.log('next');
 };
 
+// relocates to product selected
 const handleRelocate = (event) => {
-	console.log('relocate to product page');
-
 	const productClicked = event.currentTarget;
 	const index = parseInt(productClicked.getAttribute('data-index'));
 	window.open(productData[index].productUrl);
 };
 
+// constructing the carousel item
 const constructCarouselItem = (product, index) => {
-	// construct carousel item
 	const price = document.createElement('h3');
-	price.textContent = product.price;
+	price.textContent = '£' + product.price;
 
 	const productName = document.createElement('h4');
 	productName.setAttribute('class', 'product-name');
-	productName.textContent = product.productTitle;
+	productName.textContent = product.productTitle.split(/-/)[1];
 
 	const brand = document.createElement('h3');
 	brand.setAttribute('class', 'brand-name');
-	brand.textContent = product.productTitle;
+	brand.textContent = product.productTitle.split(/-/)[0];
 
 	const detailsDiv = document.createElement('div');
 	detailsDiv.setAttribute('class', 'carousel-item-details');
@@ -66,15 +54,17 @@ const constructCarouselItem = (product, index) => {
 	return itemDiv;
 };
 
-const renderCarouselItem = () => {
-	const carouselItem = constructCarouselItem(productData[0], 0);
-	const carouselItem2 = constructCarouselItem(productData[1], 1);
+// rendering carousel item
+// mapping through productData and append to parent
+const renderCarouselItem = async () => {
+	const { productData } = await fetchData();
+	const carouselItems = productData.map(constructCarouselItem);
 
-	// append to parent
 	const carousel = document.querySelector('#carousel');
-	carousel.append(carouselItem, carouselItem2);
+	carousel.append(...carouselItems);
 };
 
+// onLoad function
 const onLoad = () => {
 	renderCarouselItem();
 };
