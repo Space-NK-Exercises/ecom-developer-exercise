@@ -1,0 +1,5 @@
+- Display JSON data for all 22 items [x]
+- Splice BRAND name from productUrl and display to html []
+- Link each product to website (productUrl) []
+- Add responsivity to carousel []
+- Add unique styling []
