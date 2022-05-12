@@ -1,0 +1,117 @@
+#carouselContainer {
+  position: relative;
+}
+#itemsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.carouselItem {
+  width: 100%;
+  animation: slide 0.75s;
+  display: inline;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.imgCarousel {
+  width: 75%;
+  display: block;
+  margin: auto;
+  padding: 10%;
+}
+.informationItem {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-family: "Hind", sans-serif;
+}
+
+.informationItem h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.informationItem a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.informationItem span {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.arrow {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+  z-index: 10;
+  user-select: none;
+}
+.arrow:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -1.37rem;
+  padding: 1rem;
+  border-radius: 0 0.18rem 0.18rem 0;
+}
+.next {
+  right: 0;
+  border-radius: 0.18px 0 0 0-18px;
+}
+
+@media (min-width: 768px) {
+  .carouselItem {
+    width: 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .carouselItem {
+    width: 33.33%;
+  }
+}
