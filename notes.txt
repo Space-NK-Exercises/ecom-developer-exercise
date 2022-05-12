@@ -1,5 +1,6 @@
 - Display JSON data for all 22 items [x]
-- Splice BRAND name from productUrl and display to html []
+- Split BRAND name from productTitle and display to html [x]
+    - Split does not work for the last item as it only containst product name []
 - Link each product to website (productUrl) []
 - Add responsivity to carousel []
 - Add unique styling []

@@ -1,9 +1,11 @@
-//buttons
+// buttons
 const productContainers = [...document.querySelectorAll(".product-container")];
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
+// text
 const imageSrc = [...document.querySelectorAll(".image-src")];
+const brandName = [...document.querySelectorAll(".brand-name")];
 const productTitle = [...document.querySelectorAll(".product-title")];
 const price = [...document.querySelectorAll(".price")];
 
@@ -32,12 +34,18 @@ fetch(json)
 
     //loop through and display data
     jsonData.forEach((product, i) => {
-      //   console.log(product.price);
+      const text = product.productTitle;
+      const newText = text.split("-");
+
+      // does not work on the last item
+      console.log(newText[0].toUpperCase());
+
+      brandName[i].innerHTML = newText[0].toUpperCase();
       imageSrc[i].src = product.imageSrc;
-      productTitle[i].innerHTML = product.productTitle;
+      productTitle[i].innerHTML = newText[1];
       price[i].innerHTML = product.price;
 
-      //splice brand name from productUrl
+      //split brand name from productUrl
     });
   })
   .catch(error => {
