@@ -1,14 +1,16 @@
-// buttons
+//button variables
 const productContainers = [...document.querySelectorAll(".product-container")];
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
-// text
+//text variables
+const productLink = [...document.querySelectorAll(".product-link")];
 const imageSrc = [...document.querySelectorAll(".image-src")];
 const brandName = [...document.querySelectorAll(".brand-name")];
 const productTitle = [...document.querySelectorAll(".product-title")];
 const price = [...document.querySelectorAll(".price")];
 
+//scroll carousel
 productContainers.forEach((item, i) => {
   let containerDimensions = item.getBoundingClientRect();
   let containerWidth = containerDimensions.width;
@@ -35,17 +37,24 @@ fetch(json)
     //loop through and display data
     jsonData.forEach((product, i) => {
       const text = product.productTitle;
-      const newText = text.split("-");
+      productLink[i].href = product.productUrl;
 
-      // does not work on the last item
-      console.log(newText[0].toUpperCase());
+      //if image ends with .jpg then display, otherwise add .jpg
+      const isJpg = product.imageSrc.endsWith("jpg");
+      const src = isJpg ? product.imageSrc : `${product.imageSrc}.jpg`;
 
-      brandName[i].innerHTML = newText[0].toUpperCase();
-      imageSrc[i].src = product.imageSrc;
-      productTitle[i].innerHTML = newText[1];
+      imageSrc[i].src = src;
       price[i].innerHTML = product.price;
 
-      //split brand name from productUrl
+      const newText = text.split("-");
+      //add brand name to product that only has product title
+      if (newText.length > 1) {
+        productTitle[i].innerHTML = newText[1];
+        brandName[i].innerHTML = newText[0].toUpperCase();
+      } else {
+        productTitle[i].innerHTML = text;
+        brandName[i].innerHTML = "MALIN GO";
+      }
     });
   })
   .catch(error => {
