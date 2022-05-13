@@ -1,3 +1,6 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 /* Container */
 
 * {
@@ -8,7 +11,7 @@
 
 html {
   text-align: center;
-  font-family: "Mulish", sans-serif;
+  font-family: 'Nunito', sans-serif;;
 }
 
 h1 {
@@ -34,7 +37,7 @@ h1 {
   flex: 0 0 auto;
   width: 20%;
   height: 20%;
-  margin-right: 40px;
+  margin-right: 50px;
 }
 
 .product-image {
@@ -56,9 +59,8 @@ h1 {
   padding-top: 10px;
 }
 
-.price {
-  font-weight: 900;
-  font-size: 20px;
+.brand-name, .product-title, .price {
+  line-height: 25px;
 }
 
 .product-container::-webkit-scrollbar {

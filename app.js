@@ -45,7 +45,13 @@ fetch(json)
       const src = isJpg ? product.imageSrc : `${product.imageSrc}.jpg`;
 
       imageSrc[i].src = src;
-      price[i].innerHTML = product.price;
+
+      //add price to product with no price
+      if (!product.price == "") {
+        price[i].innerHTML = `£${product.price}`;
+      } else {
+        price[i].innerHTML = `£36.50`;
+      }
 
       const newText = text.split("-");
       //add brand name to product that only has product title
