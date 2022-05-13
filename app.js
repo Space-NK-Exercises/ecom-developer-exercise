@@ -12,8 +12,9 @@ const price = [...document.querySelectorAll(".price")];
 
 //scroll carousel
 productContainers.forEach((item, i) => {
-  let containerDimensions = item.getBoundingClientRect();
-  let containerWidth = containerDimensions.width;
+  const productCard = [...item.querySelectorAll(".product-card")];
+  const containerDimensions = productCard[i].getBoundingClientRect();
+  const containerWidth = containerDimensions.width;
 
   nxtBtn[i].addEventListener("click", () => {
     item.scrollLeft += containerWidth;
