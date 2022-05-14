@@ -1,24 +1,23 @@
-/* Google Fonts */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
-/* Container */
-
+/* Layout */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
   text-align: center;
-  font-family: 'Nunito', sans-serif;;
+  font-family: 'Nunito', sans-serif;
+  ;
 }
 
 h1 {
   margin: 30px 0 100px 0;
 }
 
-/* Products */
+/* Container */
 .product {
   width: 100%;
   position: relative;
@@ -26,18 +25,22 @@ h1 {
   padding: 20px;
 }
 
-.product-container {
-  padding: 0 100px;
+.carousel-container {
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
 }
 
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Products */
 .product-card {
   flex: 0 0 auto;
   width: 20%;
   height: 20%;
-  margin-right: 50px;
+  margin: 0 100px 80px 0;
 }
 
 .product-image {
@@ -59,19 +62,18 @@ h1 {
   padding-top: 10px;
 }
 
-.brand-name, .product-title, .price {
-  line-height: 25px;
-}
-
-.product-container::-webkit-scrollbar {
-  display: none;
+.product-brand,
+.product-title,
+.price {
+  font-size: 20px;
+  line-height: 30px;
 }
 
 /* Buttons */
 .pre-btn,
 .nxt-btn {
   border: none;
-  width: 10vw;
+  width: 10%;
   height: 70%;
   position: absolute;
   top: 0;
@@ -103,3 +105,28 @@ h1 {
   opacity: 1;
 }
 
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-card {
+    margin-right: 70px;
+  }
+
+  .product-brand,
+  .product-title,
+  .price {
+    font-size: 20px;
+    line-height: normal;
+  }
+
+  .pre-btn,
+  .nxt-btn {
+    width: 10%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 700px) {
+  .product-brand, .product-title, .price {
+    font-size: 15px;
+  }
+}

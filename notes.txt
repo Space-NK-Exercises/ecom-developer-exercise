@@ -1,15 +1,15 @@
 Add responsivity to carousel
-    - Media Queries (font, image size) []
+    - Media Queries (font, image size) [x]
 
 Add unique styling
     - Font style [x]
-    - Include arrows closer to screenshot (thinner) []
-    - Image hover effects []
+    - Include arrows closer to screenshot (thinner) [x]
 
 Clean up code
-     - Clear html class names []
+     - Clear html class names [x]
      - Add short concise comments explaining code []
 
 When Finished
+- Outline summary and decisions made in ReadME doc []
 - Make pull request []
 - Email to confirm completion []

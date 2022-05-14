@@ -1,17 +1,17 @@
 //button variables
-const productContainers = [...document.querySelectorAll(".product-container")];
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
-//text variables
-const productLink = [...document.querySelectorAll(".product-link")];
+//product variables
+const carousel = [...document.querySelectorAll(".carousel-container")];
+const links = [...document.querySelectorAll(".product-link")];
 const imageSrc = [...document.querySelectorAll(".image-src")];
-const brandName = [...document.querySelectorAll(".brand-name")];
-const productTitle = [...document.querySelectorAll(".product-title")];
-const price = [...document.querySelectorAll(".price")];
+const brands = [...document.querySelectorAll(".product-brand")];
+const titles = [...document.querySelectorAll(".product-title")];
+const prices = [...document.querySelectorAll(".price")];
 
 //scroll carousel
-productContainers.forEach((item, i) => {
+carousel.forEach((item, i) => {
   const productCard = [...item.querySelectorAll(".product-card")];
   const containerDimensions = productCard[i].getBoundingClientRect();
   const containerWidth = containerDimensions.width;
@@ -24,6 +24,8 @@ productContainers.forEach((item, i) => {
     item.scrollLeft -= containerWidth;
   });
 });
+
+//slide carousel
 
 //fetch json
 const json = "/data/recommendations.json";
@@ -38,7 +40,7 @@ fetch(json)
     //loop through and display data
     jsonData.forEach((product, i) => {
       const text = product.productTitle;
-      productLink[i].href = product.productUrl;
+      links[i].href = product.productUrl;
 
       //if image ends with .jpg then display, otherwise add .jpg
       const isJpg = product.imageSrc.endsWith("jpg");
@@ -48,19 +50,19 @@ fetch(json)
 
       //add price to product with no price
       if (!product.price == "") {
-        price[i].innerHTML = `£${product.price}`;
+        prices[i].innerHTML = `£${product.price}`;
       } else {
-        price[i].innerHTML = `£36.50`;
+        prices[i].innerHTML = `£36.50`;
       }
 
       const newText = text.split("-");
       //add brand name to product that only has product title
       if (newText.length > 1) {
-        productTitle[i].innerHTML = newText[1];
-        brandName[i].innerHTML = newText[0].toUpperCase();
+        titles[i].innerHTML = newText[1];
+        brands[i].innerHTML = newText[0].toUpperCase();
       } else {
-        productTitle[i].innerHTML = text;
-        brandName[i].innerHTML = "MALIN GO";
+        titles[i].innerHTML = text;
+        brands[i].innerHTML = "MALIN GO";
       }
     });
   })
