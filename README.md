@@ -11,6 +11,11 @@ Please fork this repository and commit your changes for review.
 
 Amend this Readme in your forked repo and use your commits to outline the component you have created and the decisions that you have made, including any information required for how to run your component. When complete please raise a Pull Request back into master branch for review.
 
+# Lessons Learned
+
+Fun excercise that allowed me to practise async JavaScript
+Gave me the opportunity to create a fluid carousel that I may implement into my own personal projects
+
 ## Carousel
 
 Scrolling feature (click, wheel)
@@ -25,8 +30,3 @@ Gradual Disapearance Backgrounds on Sides
 
 Experience using fetch api
 Missing data from json that I had to contend with (conditionals)
-
-## Lessons Learned
-
-Fun excercise that allowed me to practise async JavaScript
-Gave me the opportunity to create a fluid carousel that I may implement into my own personal projects
