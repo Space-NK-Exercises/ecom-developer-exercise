@@ -1,21 +1,22 @@
-//button variables
+//button dom variables
 const nxtBtn = [...document.querySelectorAll(".nxt-btn")];
 const preBtn = [...document.querySelectorAll(".pre-btn")];
 
-//product variables
-const carousel = [...document.querySelectorAll(".carousel-container")];
+//product dom variables
+const section = document.querySelectorAll(".carousel");
+const carousel = document.querySelectorAll(".carousel-container");
 const links = [...document.querySelectorAll(".product-link")];
 const imageSrc = [...document.querySelectorAll(".image-src")];
 const brands = [...document.querySelectorAll(".product-brand")];
 const titles = [...document.querySelectorAll(".product-title")];
 const prices = [...document.querySelectorAll(".price")];
 
-//scroll carousel
 carousel.forEach((item, i) => {
-  const productCard = [...item.querySelectorAll(".product-card")];
-  const containerDimensions = productCard[i].getBoundingClientRect();
+  const cards = [...item.querySelectorAll(".product-card")];
+  const containerDimensions = cards[i].getBoundingClientRect();
   const containerWidth = containerDimensions.width;
 
+  //scroll carousel - click
   nxtBtn[i].addEventListener("click", () => {
     item.scrollLeft += containerWidth;
   });
@@ -23,9 +24,16 @@ carousel.forEach((item, i) => {
   preBtn[i].addEventListener("click", () => {
     item.scrollLeft -= containerWidth;
   });
-});
 
-//slide carousel
+  //scroll carousel - wheel
+  item.addEventListener("wheel", evt => {
+    if (evt.deltaY > 0) {
+      item.scrollLeft += containerWidth;
+    } else {
+      item.scrollLeft -= containerWidth;
+    }
+  });
+});
 
 //fetch json
 const json = "/data/recommendations.json";
