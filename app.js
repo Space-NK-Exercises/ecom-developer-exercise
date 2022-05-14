@@ -53,7 +53,6 @@ fetch(json)
       //if image ends with .jpg then display, otherwise add .jpg
       const isJpg = product.imageSrc.endsWith("jpg");
       const src = isJpg ? product.imageSrc : `${product.imageSrc}.jpg`;
-
       imageSrc[i].src = src;
 
       //add price to product with no price
@@ -74,6 +73,7 @@ fetch(json)
       }
     });
   })
+  //consoles error message
   .catch(error => {
     console.log(error);
   });

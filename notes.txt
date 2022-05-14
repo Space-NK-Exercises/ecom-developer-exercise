@@ -1,4 +1,4 @@
 When Finished
-- Outline summary and decisions made in ReadME doc []
+- Outline summary and decisions made in ReadME doc [x]
 - Make pull request []
 - Email to confirm completion []
