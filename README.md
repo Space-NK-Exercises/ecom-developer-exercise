@@ -17,11 +17,11 @@ This was an enjoyable excercise that gave me an opportunity to work on my vanill
 
 ## Carousel
 
-I initially designed the carousel by using CSS flex to distribute the products horizontally. Once the styling was satisfactory (more info below) I moved on to JavaScript to apply the functionality of the carousel. I did this by using the width of a product card (received from getBoundingClientRect()), to determine how much to the left or right the carousel scrolls (when an arrow is clicked). For instance, if the user clicks the right arrow (nxtBtn) the carousel will scroll to the left by the exact width size of a product card.
+I initially designed the carousel by using CSS flex to display the products horizontally. Once the styling was satisfactory (more info below) I moved on to JavaScript to apply the functionality of the carousel. I did this by using the width of a product card (received from getBoundingClientRect()), to determine how much to the left or right the carousel should scroll (when an arrow is clicked). For instance, if the user clicks the right arrow (nxtBtn) the carousel will scroll to the left by the exact width size of a product card.
 
-I also included a feature where the carousel will scroll even when the user spins their mouse wheel. I felt this would be ideal as clicking the arrow to scroll through numerous products would be time consuming.
+I also included a feature where the carousel will scroll when the user spins their mouse wheel. I felt this would be ideal as clicking the arrow to scroll through numerous products would be time consuming and monotonous.
 
-In future, I would include being able to click on the carousel and drag in order to scroll through the carousel. This would be a good design for mobile devices. Additionally, I would include an infinite loop to the carousel, so when the user reaches the last product, it would take them the the start of the carousel again.
+In future, I would include being able to click on the carousel and drag in order to scroll through the carousel. This would be a good design for mobile devices. Additionally, I would include an infinite loop to the carousel, so when the user reaches the last product, it would take them the the start of the carousel again. This would prevent users from having to scroll to the other side of the carousel to see a particular product.
 
 ## Styling
 
